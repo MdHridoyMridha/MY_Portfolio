@@ -40,20 +40,22 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <motion.button
+            <motion.a
+              href="#creative"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 rounded-2xl bg-blue-600 text-white font-bold shadow-xl shadow-blue-200 flex items-center gap-2 hover:bg-blue-700 transition-all"
             >
               View My Work <ArrowRight size={20} />
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
+              href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 rounded-2xl bg-white text-gray-800 font-bold border border-gray-200 shadow-sm flex items-center gap-2 hover:bg-gray-50 transition-all"
             >
               Contact Me
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
 
@@ -97,8 +99,7 @@ export default function Hero() {
               <Camera size={24} />
             </div>
             <div>
-              <p className="text-xs text-gray-500 font-medium">Photographer</p>
-              <p className="text-sm font-bold">Cinematic</p>
+              <p className="text-sm font-bold">Content Creator</p>
             </div>
           </motion.div>
         </motion.div>

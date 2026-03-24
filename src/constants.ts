@@ -22,7 +22,7 @@ import {
 
 export const PERSONAL_INFO = {
   name: "MD. Hridoy Mridha",
-  location: "Bangladesh",
+  location: "Dhaka, Bangladesh",
   education: "North South University (CSE)",
   title: "NSU'r Single Star | CSE Student | Content Creator | Video Editor",
   profileImage: "https://drive.google.com/thumbnail?id=1BsjWBi0PII4cKOA0yOqzGFA1NDEa-WMx&sz=w1000",

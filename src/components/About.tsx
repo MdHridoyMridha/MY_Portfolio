@@ -43,7 +43,8 @@ export default function About() {
               </p>
               <p>
                 While I spend my days diving into algorithms and programming languages like C++, Java, and Python, 
-                my soul thrives in the world of visual media. I am a professional-level video editor and a cinematic photographer.
+                my soul thrives in the world of visual media. I am a professional-level video editor and content creator, 
+                making engaging videos ranging from daily life vlogs and funny sketches to educational content and university-related stories.
               </p>
               <p>
                 I'm constantly learning and improving, not just in tech but also in communication and English, 
