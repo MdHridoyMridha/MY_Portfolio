@@ -25,6 +25,7 @@ export const PERSONAL_INFO = {
   location: "Bangladesh",
   education: "North South University (CSE)",
   title: "NSU'r Single Star | CSE Student | Content Creator | Video Editor",
+  profileImage: "https://drive.google.com/thumbnail?id=1v4QVX0TdwXmcRAtJXwRAYHfgr7SAn9Ku&sz=w1000",
   bio: "I build digital experiences and create engaging visual content through video and photography. Currently pursuing my Computer Science degree while mastering the art of cinematic storytelling.",
 };
 
@@ -54,7 +55,7 @@ export const PROJECTS = [
     title: "Car Rental Web App",
     description: "A full-stack car rental platform with real-time availability and booking management.",
     tech: ["React", "Supabase", "Tailwind CSS"],
-    image: "https://picsum.photos/seed/car-rental/800/600",
+    image: "https://drive.google.com/thumbnail?id=15ELgQp-kfcf1mNXz-24FUoQp1sjqAsLP&sz=w1000",
     link: "https://car-rental-app-eight-gules.vercel.app/",
     github: "https://github.com/MdHridoyMridha/carRentalApp"
   },

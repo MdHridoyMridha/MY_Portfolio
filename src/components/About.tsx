@@ -15,7 +15,7 @@ export default function About() {
           >
             <div className="aspect-[4/5] rounded-[48px] overflow-hidden shadow-2xl border-4 border-white">
               <img 
-                src="https://picsum.photos/seed/about/800/1000" 
+                src={PERSONAL_INFO.profileImage} 
                 alt="About Hridoy"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

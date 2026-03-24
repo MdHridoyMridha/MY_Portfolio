@@ -66,7 +66,7 @@ export default function Hero() {
           {/* 3D Floating Elements Simulation */}
           <div className="relative z-10 rounded-[40px] overflow-hidden border-8 border-white shadow-2xl aspect-square max-w-md mx-auto">
             <img 
-              src="https://picsum.photos/seed/hridoy/800/800" 
+              src={PERSONAL_INFO.profileImage} 
               alt="Hridoy Mridha"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
