@@ -15,7 +15,7 @@ export default function About() {
           >
             <div className="aspect-[4/5] rounded-[48px] overflow-hidden shadow-2xl border-4 border-white">
               <img 
-                src={PERSONAL_INFO.profileImage} 
+                src={PERSONAL_INFO.aboutImage} 
                 alt="About Hridoy"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

@@ -25,7 +25,8 @@ export const PERSONAL_INFO = {
   location: "Bangladesh",
   education: "North South University (CSE)",
   title: "NSU'r Single Star | CSE Student | Content Creator | Video Editor",
-  profileImage: "https://drive.google.com/thumbnail?id=1v4QVX0TdwXmcRAtJXwRAYHfgr7SAn9Ku&sz=w1000",
+  profileImage: "https://drive.google.com/thumbnail?id=1BsjWBi0PII4cKOA0yOqzGFA1NDEa-WMx&sz=w1000",
+  aboutImage: "https://drive.google.com/thumbnail?id=1v4QVX0TdwXmcRAtJXwRAYHfgr7SAn9Ku&sz=w1000",
   bio: "I build digital experiences and create engaging visual content through video and photography. Currently pursuing my Computer Science degree while mastering the art of cinematic storytelling.",
 };
 
@@ -78,38 +79,65 @@ export const PROJECTS = [
 export const CREATIVE_WORK = [
   {
     type: "video",
-    title: "Cinematic Travel Vlog",
-    thumbnail: "https://picsum.photos/seed/travel/800/1000",
-    category: "Video Editing"
-  },
-  {
-    type: "photo",
-    title: "Urban Street Photography",
-    thumbnail: "https://picsum.photos/seed/street/800/1000",
-    category: "Photography"
-  },
-  {
-    type: "video",
-    title: "Tech Review Content",
-    thumbnail: "https://picsum.photos/seed/tech/800/1000",
-    category: "Content Creation"
-  },
-  {
-    type: "photo",
-    title: "Nature Landscapes",
-    thumbnail: "https://picsum.photos/seed/nature/800/1000",
-    category: "Photography"
-  },
-  {
-    type: "video",
-    title: "Short Film Project",
-    thumbnail: "https://picsum.photos/seed/film/800/1000",
+    title: "Cinematography",
+    thumbnail: "https://drive.google.com/thumbnail?id=1BLRX05vn9sbuw_dFLYYcmUvNWjXpCjn2&sz=w1000",
+    link: "https://drive.google.com/file/d/1BLRX05vn9sbuw_dFLYYcmUvNWjXpCjn2/view?usp=drivesdk",
     category: "Cinematography"
   },
   {
+    type: "video",
+    title: "Storytelling",
+    thumbnail: "https://drive.google.com/thumbnail?id=14QD4eSWSt7xhqN6qLZcLOpeP7fcF-ORB&sz=w1000",
+    link: "https://drive.google.com/file/d/14QD4eSWSt7xhqN6qLZcLOpeP7fcF-ORB/view?usp=drivesdk",
+    category: "Storytelling"
+  },
+  {
+    type: "video",
+    title: "Funny Content",
+    thumbnail: "https://drive.google.com/thumbnail?id=1F5ajn-XwOmKxWuDUcPxeV3jtghHUumR5&sz=w1000",
+    link: "https://drive.google.com/file/d/1F5ajn-XwOmKxWuDUcPxeV3jtghHUumR5/view?usp=drivesdk",
+    category: "Entertainment"
+  },
+  {
+    type: "video",
+    title: "Educational Content",
+    thumbnail: "https://drive.google.com/thumbnail?id=1odxnDCDENlUA7eXXb9chyAKavXH2a1LD&sz=w1000",
+    link: "https://drive.google.com/file/d/1odxnDCDENlUA7eXXb9chyAKavXH2a1LD/view?usp=drivesdk",
+    category: "Education"
+  },
+  {
+    type: "video",
+    title: "Personal Vlog",
+    thumbnail: "https://drive.google.com/thumbnail?id=126eRTeeypprqPc6gy1Cq4rXvsWc0-Ya5&sz=w1000",
+    link: "https://drive.google.com/file/d/126eRTeeypprqPc6gy1Cq4rXvsWc0-Ya5/view?usp=drivesdk",
+    category: "Vlog"
+  },
+  {
     type: "photo",
-    title: "Portrait Session",
-    thumbnail: "https://picsum.photos/seed/portrait/800/1000",
+    title: "Cinematic Portrait",
+    thumbnail: "https://drive.google.com/thumbnail?id=14QMR8Lgsnd5XmuFw0MVgiQ9JDWZBcAsu&sz=w1000",
+    link: "https://drive.google.com/file/d/14QMR8Lgsnd5XmuFw0MVgiQ9JDWZBcAsu/view?usp=drivesdk",
+    category: "Photography"
+  },
+  {
+    type: "photo",
+    title: "Urban Perspective",
+    thumbnail: "https://drive.google.com/thumbnail?id=18ymHI7EG01lLJB_8gnoOEqNn_Kggkt_-&sz=w1000",
+    link: "https://drive.google.com/file/d/18ymHI7EG01lLJB_8gnoOEqNn_Kggkt_-/view?usp=drivesdk",
+    category: "Photography"
+  },
+  {
+    type: "photo",
+    title: "Nature's Beauty",
+    thumbnail: "https://drive.google.com/thumbnail?id=1SsLyN8X4Khl6H3F9rt50Mgj1hp5R_h9A&sz=w1000",
+    link: "https://drive.google.com/file/d/1SsLyN8X4Khl6H3F9rt50Mgj1hp5R_h9A/view?usp=drivesdk",
+    category: "Photography"
+  },
+  {
+    type: "photo",
+    title: "Creative Composition",
+    thumbnail: "https://drive.google.com/thumbnail?id=1JhYNf4zBOv0Yv7mig332kll8BY6GYWT4&sz=w1000",
+    link: "https://drive.google.com/file/d/1JhYNf4zBOv0Yv7mig332kll8BY6GYWT4/view?usp=drivesdk",
     category: "Photography"
   }
 ];

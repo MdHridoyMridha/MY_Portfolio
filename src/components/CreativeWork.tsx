@@ -36,13 +36,16 @@ export default function CreativeWork() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {CREATIVE_WORK.map((work, index) => (
-            <motion.div
+            <motion.a
               key={work.title}
+              href={work.link || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative aspect-[3/4] rounded-[32px] overflow-hidden shadow-2xl cursor-pointer"
+              className="group relative aspect-[3/4] rounded-[32px] overflow-hidden shadow-2xl cursor-pointer block"
             >
               <img 
                 src={work.thumbnail} 
@@ -74,7 +77,7 @@ export default function CreativeWork() {
               <div className="absolute top-6 right-6 p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white opacity-100 group-hover:opacity-0 transition-opacity duration-300">
                 {work.type === 'video' ? <Play size={20} /> : <Camera size={20} />}
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
