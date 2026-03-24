@@ -1,0 +1,181 @@
+import { 
+  Code2, 
+  Video, 
+  Camera, 
+  Globe, 
+  Cpu, 
+  Facebook, 
+  Instagram, 
+  Linkedin, 
+  Github, 
+  Mail, 
+  Phone,
+  Youtube,
+  GraduationCap,
+  Sparkles,
+  Layers,
+  Palette,
+  Trophy,
+  Award,
+  Heart
+} from 'lucide-react';
+
+export const PERSONAL_INFO = {
+  name: "MD. Hridoy Mridha",
+  location: "Bangladesh",
+  education: "North South University (CSE)",
+  title: "NSU'r Single Star | CSE Student | Content Creator | Video Editor",
+  bio: "I build digital experiences and create engaging visual content through video and photography. Currently pursuing my Computer Science degree while mastering the art of cinematic storytelling.",
+};
+
+export const SKILLS = [
+  {
+    category: "Programming",
+    icon: Code2,
+    items: ["C", "C++", "Java", "Python", "Basic Machine Learning"],
+    color: "from-blue-500 to-cyan-400"
+  },
+  {
+    category: "Web Development",
+    icon: Globe,
+    items: ["HTML5", "CSS3", "JavaScript", "React (Learning)"],
+    color: "from-purple-500 to-pink-400"
+  },
+  {
+    category: "Creative Media",
+    icon: Video,
+    items: ["Professional Video Editing", "Content Creation", "Cinematic Shooting", "Photography"],
+    color: "from-orange-500 to-yellow-400"
+  }
+];
+
+export const PROJECTS = [
+  {
+    title: "Car Rental Web App",
+    description: "A full-stack car rental platform with real-time availability and booking management.",
+    tech: ["React", "Supabase", "Tailwind CSS"],
+    image: "https://picsum.photos/seed/car-rental/800/600",
+    link: "https://car-rental-app-eight-gules.vercel.app/",
+    github: "https://github.com/MdHridoyMridha/carRentalApp"
+  },
+  {
+    title: "Personal Portfolio",
+    description: "A premium, ultra-modern portfolio website showcasing multi-disciplinary skills.",
+    tech: ["React", "Framer Motion", "Tailwind"],
+    image: "https://picsum.photos/seed/portfolio/800/600",
+    link: "#"
+  },
+  {
+    title: "C++ Management System",
+    description: "A robust console-based management system focusing on OOP principles.",
+    tech: ["C++", "File Handling"],
+    image: "https://picsum.photos/seed/cpp/800/600",
+    link: "#"
+  }
+];
+
+export const CREATIVE_WORK = [
+  {
+    type: "video",
+    title: "Cinematic Travel Vlog",
+    thumbnail: "https://picsum.photos/seed/travel/800/1000",
+    category: "Video Editing"
+  },
+  {
+    type: "photo",
+    title: "Urban Street Photography",
+    thumbnail: "https://picsum.photos/seed/street/800/1000",
+    category: "Photography"
+  },
+  {
+    type: "video",
+    title: "Tech Review Content",
+    thumbnail: "https://picsum.photos/seed/tech/800/1000",
+    category: "Content Creation"
+  },
+  {
+    type: "photo",
+    title: "Nature Landscapes",
+    thumbnail: "https://picsum.photos/seed/nature/800/1000",
+    category: "Photography"
+  },
+  {
+    type: "video",
+    title: "Short Film Project",
+    thumbnail: "https://picsum.photos/seed/film/800/1000",
+    category: "Cinematography"
+  },
+  {
+    type: "photo",
+    title: "Portrait Session",
+    thumbnail: "https://picsum.photos/seed/portrait/800/1000",
+    category: "Photography"
+  }
+];
+
+export const JOURNEY = [
+  {
+    year: "Present",
+    title: "Member - CEC",
+    description: "Active member of the Computer Engineering Club (CEC) at North South University, participating in tech workshops and community events.",
+    icon: Cpu
+  },
+  {
+    year: "Present",
+    title: "CSE Student",
+    description: "Studying Computer Science and Engineering at North South University, focusing on software architecture and algorithms.",
+    icon: GraduationCap
+  },
+  {
+    year: "2025",
+    title: "Chess Semi-finalist",
+    description: "Semi-finalist at the Chess competition organized by NSU SEPS.",
+    icon: Trophy
+  },
+  {
+    year: "2025",
+    title: "Promotional Member - NSU",
+    description: "Promotional member for the First Quran Conference and Seerah Exhibition 2025 at North South University.",
+    icon: Sparkles
+  },
+  {
+    year: "2024",
+    title: "Catwalk 2024 - 7km Marathon",
+    description: "Participated in the 7km marathon celebrating the first International Day of the Arabian Leopard. Received a certificate from H.E. Essa Yousef Essa Al-Duhailan, Ambassador of Saudi Arabia to Dhaka.",
+    icon: Award
+  },
+  {
+    year: "2024",
+    title: "ACM Student Chapter Volunteer",
+    description: "Volunteered for the Data Science Learning Program 2024, assisting in program organization and student support.",
+    icon: Sparkles
+  },
+  {
+    year: "2023",
+    title: "Creative Mastery",
+    description: "Self-taught professional video editing and photography, building a personal brand through content creation.",
+    icon: Palette
+  },
+  {
+    year: "2022",
+    title: "Tech Foundations",
+    description: "Started journey with C/C++ and web fundamentals, discovering the passion for building digital tools.",
+    icon: Layers
+  }
+];
+
+export const HOBBIES = [
+  { name: "Football", icon: "⚽" },
+  { name: "Cricket", icon: "🏏" },
+  { name: "Badminton", icon: "🏸" },
+  { name: "Chess", icon: "♟️" }
+];
+
+export const SOCIAL_LINKS = [
+  { name: "Facebook Page", icon: Facebook, url: "https://www.facebook.com/share/19b5zrmBQR/?mibextid=wwXIfr", color: "hover:text-blue-600" },
+  { name: "Facebook", icon: Facebook, url: "https://www.facebook.com/share/1B7usP8dcf/?mibextid=wwXIfr", color: "hover:text-blue-600" },
+  { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/the.hridoy_mridha?igsh=ZTBlaWFqc3BrcHl2&utm_source=qr", color: "hover:text-pink-600" },
+  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/md-hridoy-mridha-66b914230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", color: "hover:text-blue-700" },
+  { name: "YouTube", icon: Youtube, url: "https://youtube.com/@hridoy_mridha?si=RFjp1FdnJFe6-3ks", color: "hover:text-red-600" },
+  { name: "GitHub", icon: Github, url: "https://github.com/MdHridoyMridha", color: "hover:text-gray-900" }
+];
