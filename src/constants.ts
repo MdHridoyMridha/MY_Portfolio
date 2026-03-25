@@ -165,25 +165,29 @@ export const JOURNEY = [
     year: "Present",
     title: "CSE Student",
     description: "Studying Computer Science and Engineering at North South University, specializing in AI and Machine Learning while building full-stack expertise in modern Frontend and Backend technologies.",
-    icon: GraduationCap
+    icon: GraduationCap,
+    image: PERSONAL_INFO.aboutImage
   },
   {
     year: "2025",
     title: "Chess Semi-finalist",
     description: "Semi-finalist at the Chess competition organized by NSU SEPS.",
-    icon: Trophy
+    icon: Trophy,
+    image: "https://drive.google.com/thumbnail?id=1bKY8oHAhZtZVgczM_fUo5-IPQy7hFAPN&sz=w1000"
   },
   {
     year: "2025",
     title: "Promotional Member - NSU",
     description: "Promotional member for the First Quran Conference and Seerah Exhibition 2025 at North South University.",
-    icon: Sparkles
+    icon: Sparkles,
+    image: "https://drive.google.com/thumbnail?id=1bEj-eKb1GObxNWdiUpDw95IMRVi346_-&sz=w1000"
   },
   {
     year: "2024",
     title: "Catwalk 2024 - 7km Marathon",
     description: "Participated in the 7km marathon celebrating the first International Day of the Arabian Leopard. Received a certificate from H.E. Essa Yousef Essa Al-Duhailan, Ambassador of Saudi Arabia to Dhaka.",
-    icon: Award
+    icon: Award,
+    image: "https://drive.google.com/thumbnail?id=1NTHoMYLBB1FDbtaNVVS1BG_e5hmahvhn&sz=w1000"
   },
   {
     year: "2024",
@@ -195,7 +199,8 @@ export const JOURNEY = [
     year: "2023",
     title: "Creative Mastery",
     description: "Self-taught professional video editing and photography, building a personal brand through content creation.",
-    icon: Palette
+    icon: Palette,
+    image: "https://drive.google.com/thumbnail?id=1pTEJutDuVMVwhysqckF3aBjVstz_ovlB&sz=w1000"
   },
   {
     year: "2022",

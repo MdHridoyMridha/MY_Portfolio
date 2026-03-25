@@ -76,12 +76,12 @@ export default function Journey() {
                     whileHover={{ scale: 1.02, y: -5 }}
                     className={`p-10 rounded-[40px] glass-morphism border border-white/10 relative group overflow-hidden ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}
                   >
-                    {/* Image for CSE Student entry */}
-                    {item.title === "CSE Student" && (
+                    {/* Image for journey entry if available */}
+                    {item.image && (
                       <div className="mb-6 rounded-2xl overflow-hidden aspect-video shadow-xl border border-white/10">
                         <img 
-                          src={PERSONAL_INFO.aboutImage} 
-                          alt="CSE North South University" 
+                          src={item.image} 
+                          alt={item.title} 
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           referrerPolicy="no-referrer"
                         />
