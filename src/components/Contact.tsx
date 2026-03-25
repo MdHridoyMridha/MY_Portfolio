@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, MouseEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
 
@@ -7,7 +7,15 @@ export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showPhoneToast, setShowPhoneToast] = useState(false);
 
-  const handlePhoneClick = (e: React.MouseEvent) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    e.currentTarget.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`);
+    e.currentTarget.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`);
+  };
+
+  const handlePhoneClick = (e: MouseEvent) => {
     e.preventDefault();
     setShowPhoneToast(true);
     setTimeout(() => setShowPhoneToast(false), 3000);
@@ -42,47 +50,59 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gray-50/50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16">
+    <section 
+      id="contact" 
+      className="py-32 relative overflow-hidden mesh-bg code-lighting scanline-effect"
+      onMouseMove={handleMouseMove}
+    >
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-24">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              Let's <span className="text-blue-600">Connect</span>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 text-[10px] font-mono mb-8 border border-cyan-500/20 uppercase tracking-[0.3em]"
+            >
+              <Send size={14} className="animate-pulse" />
+              <span>Get In Touch</span>
+            </motion.div>
+            <h2 className="text-5xl md:text-7xl font-black mb-10 text-white tracking-tighter leading-none">
+              Let's <span className="text-gradient-vibrant">Connect</span>
             </h2>
-            <p className="text-lg text-gray-500 mb-12 leading-relaxed">
-              Have a project in mind or just want to say hi? I'm always open to discussing new opportunities, 
-              creative collaborations, or technical challenges.
+            <p className="text-xl text-slate-400 mb-16 leading-relaxed font-light max-w-lg">
+              Have a project in mind or just want to say hi? I'm always open to discussing <span className="text-white font-bold">new opportunities</span>, creative collaborations, or technical challenges.
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-10">
               <a 
                 href="mailto:hridoyhs369@gmail.com"
-                className="flex items-center gap-6 group cursor-pointer"
+                className="flex items-center gap-8 group cursor-pointer"
               >
-                <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                  <Mail size={24} />
+                <div className="w-20 h-20 rounded-3xl glass-morphism flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-500 border border-white/10 group-hover:rotate-12 group-hover:scale-110">
+                  <Mail size={28} />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Email Me</p>
-                  <p className="text-lg font-bold text-gray-900">hridoyhs369@gmail.com</p>
+                  <p className="text-[10px] text-slate-500 font-black uppercase tracking-[0.3em] mb-2">Email Me</p>
+                  <p className="text-xl font-black text-white group-hover:text-cyan-400 transition-colors">hridoyhs369@gmail.com</p>
                 </div>
               </a>
 
               <a 
                 href="#"
                 onClick={handlePhoneClick}
-                className="flex items-center gap-6 group cursor-pointer relative"
+                className="flex items-center gap-8 group cursor-pointer relative"
               >
-                <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
-                  <Phone size={24} />
+                <div className="w-20 h-20 rounded-3xl glass-morphism flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-black transition-all duration-500 border border-white/10 group-hover:-rotate-12 group-hover:scale-110">
+                  <Phone size={28} />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Call Me</p>
-                  <p className="text-lg font-bold text-gray-900">+880 1XXXXXXXXX</p>
+                  <p className="text-[10px] text-slate-500 font-black uppercase tracking-[0.3em] mb-2">Call Me</p>
+                  <p className="text-xl font-black text-white group-hover:text-purple-400 transition-colors">+880 1XXXXXXXXX</p>
                 </div>
 
                 <AnimatePresence>
@@ -91,7 +111,7 @@ export default function Contact() {
                       initial={{ opacity: 0, y: 10, scale: 0.9 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.9 }}
-                      className="absolute left-0 -top-12 bg-gray-900 text-white text-xs py-2 px-4 rounded-lg shadow-xl whitespace-nowrap z-30"
+                      className="absolute left-0 -top-12 glass text-cyan-400 text-[10px] font-bold uppercase tracking-widest py-2 px-4 rounded-lg shadow-xl border border-cyan-500/30 whitespace-nowrap z-30"
                     >
                       Please contact via email for a faster response! 📧
                     </motion.div>
@@ -105,12 +125,12 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-6 group cursor-pointer"
               >
-                <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-pink-600 group-hover:bg-pink-600 group-hover:text-white transition-all duration-300">
+                <div className="w-16 h-16 rounded-2xl glass flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-black transition-all duration-300 border border-white/10">
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Location</p>
-                  <p className="text-lg font-bold text-gray-900">Dhaka, Bangladesh</p>
+                  <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Location</p>
+                  <p className="text-lg font-bold text-white">Dhaka, Bangladesh</p>
                 </div>
               </a>
             </div>
@@ -120,7 +140,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-10 rounded-[48px] shadow-2xl shadow-blue-100/50 border border-gray-100 relative overflow-hidden"
+            className="glass p-10 rounded-[48px] border border-white/10 relative overflow-hidden"
           >
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
@@ -134,60 +154,60 @@ export default function Contact() {
                 >
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-700 ml-2">Full Name</label>
+                      <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-2">Full Name</label>
                       <input 
                         required
                         name="name"
                         type="text" 
                         placeholder="John Doe"
-                        className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-transparent focus:border-blue-500 focus:bg-white transition-all outline-none"
+                        className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-cyan-500/50 focus:bg-white/10 transition-all outline-none text-white placeholder:text-gray-600"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-700 ml-2">Email Address</label>
+                      <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-2">Email Address</label>
                       <input 
                         required
                         name="email"
                         type="email" 
                         placeholder="john@example.com"
-                        className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-transparent focus:border-blue-500 focus:bg-white transition-all outline-none"
+                        className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-cyan-500/50 focus:bg-white/10 transition-all outline-none text-white placeholder:text-gray-600"
                       />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-700 ml-2">Subject</label>
+                    <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-2">Subject</label>
                     <input 
                       required
                       name="subject"
                       type="text" 
                       placeholder="Project Inquiry"
-                      className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-transparent focus:border-blue-500 focus:bg-white transition-all outline-none"
+                      className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-cyan-500/50 focus:bg-white/10 transition-all outline-none text-white placeholder:text-gray-600"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-700 ml-2">Message</label>
+                    <label className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-2">Message</label>
                     <textarea 
                       required
                       name="message"
                       rows={4}
                       placeholder="Tell me about your project..."
-                      className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-transparent focus:border-blue-500 focus:bg-white transition-all outline-none resize-none"
+                      className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-cyan-500/50 focus:bg-white/10 transition-all outline-none text-white placeholder:text-gray-600 resize-none"
                     />
                   </div>
 
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}
                     whileTap={{ scale: 0.98 }}
-                    className={`w-full py-5 rounded-2xl text-white font-bold shadow-xl flex items-center justify-center gap-3 transition-all ${
-                      isSubmitting ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 shadow-blue-200 hover:bg-blue-700'
+                    className={`w-full py-5 rounded-2xl text-black font-black uppercase tracking-widest flex items-center justify-center gap-3 transition-all ${
+                      isSubmitting ? 'bg-cyan-800 cursor-not-allowed' : 'bg-cyan-500'
                     }`}
                   >
                     {isSubmitting ? (
-                      <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <div className="w-6 h-6 border-2 border-black border-t-transparent rounded-full animate-spin" />
                     ) : (
                       <>Send Message <Send size={20} /></>
                     )}
@@ -200,16 +220,16 @@ export default function Contact() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="h-full flex flex-col items-center justify-center text-center py-12"
                 >
-                  <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
+                  <div className="w-20 h-20 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center mb-6 border border-cyan-500/20">
                     <CheckCircle2 size={40} />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
-                  <p className="text-gray-500">
+                  <h3 className="text-2xl font-black text-white mb-2 tracking-tighter">Message Sent!</h3>
+                  <p className="text-gray-400 font-light">
                     Thank you for reaching out. I'll get back to you as soon as possible.
                   </p>
                   <button 
                     onClick={() => setIsSubmitted(false)}
-                    className="mt-8 text-blue-600 font-bold hover:underline"
+                    className="mt-8 text-cyan-400 font-bold uppercase tracking-widest text-xs hover:text-cyan-300 transition-colors"
                   >
                     Send another message
                   </button>

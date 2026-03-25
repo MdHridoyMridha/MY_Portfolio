@@ -28,6 +28,9 @@ export const PERSONAL_INFO = {
   profileImage: "https://drive.google.com/thumbnail?id=1BsjWBi0PII4cKOA0yOqzGFA1NDEa-WMx&sz=w1000",
   aboutImage: "https://drive.google.com/thumbnail?id=1v4QVX0TdwXmcRAtJXwRAYHfgr7SAn9Ku&sz=w1000",
   bio: "As a CSE student at North South University, I focus on AI, Machine Learning, and software engineering. My true passion is cinematic content creation—I mainly produce vlogs about my university journey, alongside funny and educational videos that bridge the gap between technology and storytelling.",
+  github: "https://github.com/MdHridoyMridha",
+  linkedin: "https://www.linkedin.com/in/md-hridoy-mridha-66b914230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+  youtube: "https://youtube.com/@hridoy_mridha?si=RFjp1FdnJFe6-3ks"
 };
 
 export const SKILLS = [
