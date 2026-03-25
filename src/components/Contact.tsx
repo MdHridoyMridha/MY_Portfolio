@@ -5,6 +5,13 @@ import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showPhoneToast, setShowPhoneToast] = useState(false);
+
+  const handlePhoneClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowPhoneToast(true);
+    setTimeout(() => setShowPhoneToast(false), 3000);
+  };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -52,7 +59,10 @@ export default function Contact() {
             </p>
 
             <div className="space-y-8">
-              <div className="flex items-center gap-6 group">
+              <a 
+                href="mailto:hridoyhs369@gmail.com"
+                className="flex items-center gap-6 group cursor-pointer"
+              >
                 <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                   <Mail size={24} />
                 </div>
@@ -60,9 +70,13 @@ export default function Contact() {
                   <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Email Me</p>
                   <p className="text-lg font-bold text-gray-900">hridoyhs369@gmail.com</p>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-6 group">
+              <a 
+                href="#"
+                onClick={handlePhoneClick}
+                className="flex items-center gap-6 group cursor-pointer relative"
+              >
                 <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
                   <Phone size={24} />
                 </div>
@@ -70,9 +84,27 @@ export default function Contact() {
                   <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Call Me</p>
                   <p className="text-lg font-bold text-gray-900">+880 1XXXXXXXXX</p>
                 </div>
-              </div>
 
-              <div className="flex items-center gap-6 group">
+                <AnimatePresence>
+                  {showPhoneToast && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      className="absolute left-0 -top-12 bg-gray-900 text-white text-xs py-2 px-4 rounded-lg shadow-xl whitespace-nowrap z-30"
+                    >
+                      Please contact via email for a faster response! 📧
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </a>
+
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=Dhaka,Bangladesh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-6 group cursor-pointer"
+              >
                 <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-pink-600 group-hover:bg-pink-600 group-hover:text-white transition-all duration-300">
                   <MapPin size={24} />
                 </div>
@@ -80,7 +112,7 @@ export default function Contact() {
                   <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Location</p>
                   <p className="text-lg font-bold text-gray-900">Dhaka, Bangladesh</p>
                 </div>
-              </div>
+              </a>
             </div>
           </motion.div>
 

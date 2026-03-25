@@ -24,29 +24,29 @@ export const PERSONAL_INFO = {
   name: "MD. Hridoy Mridha",
   location: "Dhaka, Bangladesh",
   education: "North South University (CSE)",
-  title: "NSU'r Single Star | CSE Student | Content Creator | Video Editor",
+  title: "CSE Student | Content Creator | Video Editor",
   profileImage: "https://drive.google.com/thumbnail?id=1BsjWBi0PII4cKOA0yOqzGFA1NDEa-WMx&sz=w1000",
   aboutImage: "https://drive.google.com/thumbnail?id=1v4QVX0TdwXmcRAtJXwRAYHfgr7SAn9Ku&sz=w1000",
-  bio: "I build digital experiences and create engaging visual content through video and photography. Currently pursuing my Computer Science degree while mastering the art of cinematic storytelling.",
+  bio: "As a CSE student at North South University, I focus on AI, Machine Learning, and software engineering. My true passion is cinematic content creation—I mainly produce vlogs about my university journey, alongside funny and educational videos that bridge the gap between technology and storytelling.",
 };
 
 export const SKILLS = [
   {
     category: "Programming",
     icon: Code2,
-    items: ["C", "C++", "Java", "Python", "Basic Machine Learning"],
+    items: ["C", "C++", "Java", "Python", "SQL", "Basic Machine Learning"],
     color: "from-blue-500 to-cyan-400"
   },
   {
     category: "Web Development",
     icon: Globe,
-    items: ["HTML5", "CSS3", "JavaScript", "React (Learning)"],
+    items: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Bootstrap", "React (Learning)"],
     color: "from-purple-500 to-pink-400"
   },
   {
     category: "Creative Media",
     icon: Video,
-    items: ["Professional Video Editing", "Content Creation", "Cinematic Shooting", "Photography"],
+    items: ["Professional Video Editing", "Content Creation", "Storyteller", "Cinematic Shooting", "Photography"],
     color: "from-orange-500 to-yellow-400"
   }
 ];
@@ -58,7 +58,7 @@ export const PROJECTS = [
     tech: ["React", "Supabase", "Tailwind CSS"],
     image: "https://drive.google.com/thumbnail?id=15ELgQp-kfcf1mNXz-24FUoQp1sjqAsLP&sz=w1000",
     link: "https://car-rental-app-eight-gules.vercel.app/",
-    github: "https://github.com/MdHridoyMridha/carRentalApp"
+    github: "https://github.com/MdHridoyMridha/carRentalApp.git"
   },
   {
     title: "Personal Portfolio",
@@ -152,7 +152,7 @@ export const JOURNEY = [
   {
     year: "Present",
     title: "CSE Student",
-    description: "Studying Computer Science and Engineering at North South University, focusing on software architecture and algorithms.",
+    description: "Studying Computer Science and Engineering at North South University, specializing in AI and Machine Learning while building full-stack expertise in modern Frontend and Backend technologies.",
     icon: GraduationCap
   },
   {
@@ -197,7 +197,8 @@ export const HOBBIES = [
   { name: "Football", icon: "⚽" },
   { name: "Cricket", icon: "🏏" },
   { name: "Badminton", icon: "🏸" },
-  { name: "Chess", icon: "♟️" }
+  { name: "Chess", icon: "♟️" },
+  { name: "Travelling", icon: "✈️" }
 ];
 
 export const SOCIAL_LINKS = [

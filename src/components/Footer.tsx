@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
 
           <div className="text-sm text-gray-400">
-            Designed with ❤️ in Bangladesh
+            Made with ❤️ by MD. Hridoy Mridha
           </div>
         </div>
       </div>
