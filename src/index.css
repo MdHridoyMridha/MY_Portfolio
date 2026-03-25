@@ -54,7 +54,7 @@
   }
 
   .text-gradient-vibrant {
-    @apply bg-gradient-to-tr from-cyan-300 via-fuchsia-500 to-indigo-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#00f2ff] via-[#bc00ff] to-[#ff0080] bg-clip-text text-transparent;
   }
 
   .neon-border {

@@ -206,6 +206,8 @@ export const JOURNEY = [
 ];
 
 export const HOBBIES = [
+  { name: "Machine Learning", icon: "🤖" },
+  { name: "AI", icon: "🧠" },
   { name: "Football", icon: "⚽" },
   { name: "Cricket", icon: "🏏" },
   { name: "Badminton", icon: "🏸" },

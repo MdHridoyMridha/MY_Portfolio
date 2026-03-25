@@ -1,6 +1,7 @@
 import React, { useState, FormEvent, MouseEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import { PERSONAL_INFO } from '../constants';
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -55,6 +56,16 @@ export default function Contact() {
       className="py-32 relative overflow-hidden mesh-bg code-lighting scanline-effect"
       onMouseMove={handleMouseMove}
     >
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <img 
+          src={PERSONAL_INFO.aboutImage} 
+          alt="" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-24">
           <motion.div

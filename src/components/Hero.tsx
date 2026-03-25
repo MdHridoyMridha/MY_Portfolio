@@ -41,6 +41,16 @@ export default function Hero() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <img 
+          src={PERSONAL_INFO.aboutImage} 
+          alt="" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] animate-pulse" />
@@ -74,11 +84,56 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          <h1 className="text-7xl md:text-9xl font-black mb-8 tracking-tighter leading-[0.85]">
+          <h1 className="text-7xl md:text-9xl font-black mb-8 tracking-tighter leading-[0.85] perspective-1000">
             <span className="text-white block mb-2">I'm</span>
-            <span className="text-gradient-vibrant drop-shadow-[0_0_25px_rgba(6,182,212,0.4)]">
+            <motion.span 
+              className="text-gradient-vibrant drop-shadow-[0_0_40px_rgba(188,0,255,0.4)] relative inline-block font-mono tracking-tighter preserve-3d"
+              animate={{ 
+                rotateX: [0, 10, -10, 0],
+                rotateY: [0, -10, 10, 0],
+                scale: [1, 1.02, 1],
+                z: [0, 30, 0]
+              }}
+              whileHover={{ 
+                scale: 1.1,
+                rotateZ: 1,
+                filter: "brightness(1.2) contrast(1.2)",
+              }}
+              transition={{ 
+                duration: 6, 
+                repeat: Infinity, 
+                ease: "linear" 
+              }}
+            >
               {PERSONAL_INFO.name}
-            </span>
+              <motion.span
+                animate={{ opacity: [0, 1, 0] }}
+                transition={{ duration: 0.8, repeat: Infinity }}
+                className="inline-block w-[4px] h-[0.8em] bg-cyan-400 ml-2 align-middle shadow-[0_0_10px_rgba(34,211,238,0.8)]"
+              />
+              
+              {/* 3D Layered Effect */}
+              <span className="absolute inset-0 text-cyan-500/20 -z-10 translate-x-1 translate-y-1 blur-[2px]">
+                {PERSONAL_INFO.name}
+              </span>
+              <span className="absolute inset-0 text-purple-500/20 -z-20 -translate-x-1 -translate-y-1 blur-[2px]">
+                {PERSONAL_INFO.name}
+              </span>
+              
+              {/* Scanline Glitch Effect */}
+              <motion.div
+                className="absolute inset-x-0 h-[2px] bg-cyan-400/30 blur-[1px] -z-30 pointer-events-none"
+                animate={{ 
+                  top: ["0%", "100%", "0%"],
+                  opacity: [0, 0.8, 0]
+                }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: Infinity, 
+                  ease: "linear" 
+                }}
+              />
+            </motion.span>
           </h1>
 
           <p className="text-xl md:text-2xl text-slate-400 mb-10 max-w-xl font-light leading-relaxed">
@@ -178,6 +233,28 @@ export default function Hero() {
               className="absolute top-1/2 -right-20 glass-morphism p-5 rounded-2xl border border-white/20 shadow-2xl z-30"
             >
               <Globe size={32} className="text-blue-400 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
+            </motion.div>
+
+            {/* Floating Second Image */}
+            <motion.div
+              animate={{ 
+                y: [0, -40, 0],
+                rotate: [0, -10, 0]
+              }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+              className="absolute -bottom-20 -right-20 w-48 aspect-video glass-morphism rounded-2xl border border-white/20 shadow-2xl z-30 overflow-hidden group"
+            >
+              <img 
+                src={PERSONAL_INFO.aboutImage} 
+                alt="CSE North South University" 
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <p className="text-[8px] font-mono text-cyan-400 uppercase tracking-widest text-center px-2">
+                  CSE NSU
+                </p>
+              </div>
             </motion.div>
 
             {/* Orbiting Particles */}

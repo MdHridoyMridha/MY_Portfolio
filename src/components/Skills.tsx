@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { SKILLS } from '../constants';
+import { SKILLS, PERSONAL_INFO } from '../constants';
 import { Terminal, Cpu, Code2, Database, Globe, Layers, Rocket, Zap } from 'lucide-react';
 import React from 'react';
 
@@ -18,6 +18,16 @@ export default function Skills() {
       className="py-32 relative overflow-hidden mesh-bg code-lighting scanline-effect"
       onMouseMove={handleMouseMove}
     >
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <img 
+          src={PERSONAL_INFO.aboutImage} 
+          alt="" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

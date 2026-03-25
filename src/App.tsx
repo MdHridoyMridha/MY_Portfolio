@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CursorFollower from './components/CursorFollower';
 import React, { useEffect, useState } from 'react';
+import { PERSONAL_INFO } from './constants';
 
 export default function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -33,6 +34,16 @@ export default function App() {
           backgroundSize: `100% 100%, 40px 40px, 40px 40px`,
         }}
       />
+
+      {/* Global Background Image Overlay */}
+      <div className="fixed inset-0 opacity-[0.02] pointer-events-none z-0">
+        <img 
+          src={PERSONAL_INFO.aboutImage} 
+          alt="" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
 
       {/* Floating Binary Bits (Coding Vibe) */}
       <div className="fixed inset-0 pointer-events-none z-0 opacity-5 overflow-hidden">

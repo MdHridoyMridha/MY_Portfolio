@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { JOURNEY } from '../constants';
+import { JOURNEY, PERSONAL_INFO } from '../constants';
 import { Sparkles, Milestone, Zap } from 'lucide-react';
 import React from 'react';
 
@@ -18,6 +18,16 @@ export default function Journey() {
       className="py-32 relative overflow-hidden mesh-bg code-lighting scanline-effect"
       onMouseMove={handleMouseMove}
     >
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <img 
+          src={PERSONAL_INFO.aboutImage} 
+          alt="" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
@@ -66,6 +76,18 @@ export default function Journey() {
                     whileHover={{ scale: 1.02, y: -5 }}
                     className={`p-10 rounded-[40px] glass-morphism border border-white/10 relative group overflow-hidden ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}
                   >
+                    {/* Image for CSE Student entry */}
+                    {item.title === "CSE Student" && (
+                      <div className="mb-6 rounded-2xl overflow-hidden aspect-video shadow-xl border border-white/10">
+                        <img 
+                          src={PERSONAL_INFO.aboutImage} 
+                          alt="CSE North South University" 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                    )}
+
                     {/* Year Badge */}
                     <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-white text-[10px] font-black uppercase tracking-widest mb-6 border border-white/10 group-hover:bg-cyan-500/20 group-hover:text-cyan-400 transition-all duration-500`}>
                       <Zap size={12} />

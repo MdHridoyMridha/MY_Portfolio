@@ -25,6 +25,16 @@ export default function About() {
       className="py-32 relative overflow-hidden mesh-bg code-lighting scanline-effect"
       onMouseMove={handleMouseMove}
     >
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <img 
+          src={PERSONAL_INFO.aboutImage} 
+          alt="" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,6 +60,36 @@ export default function About() {
               whileHover={{ rotateY: 10, rotateX: -5 }}
               className="glass-morphism p-10 rounded-[40px] border border-white/10 relative z-10 preserve-3d"
             >
+              {/* Second Image with Overlay */}
+              <div className="relative mb-10 rounded-3xl overflow-hidden group aspect-video shadow-2xl border border-white/10">
+                <img 
+                  src={PERSONAL_INFO.aboutImage} 
+                  alt="CSE North South University" 
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-700" />
+                
+                {/* Direct Text Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className="text-4xl font-black text-white/20 uppercase tracking-[1em] select-none">
+                    CSE NSU
+                  </p>
+                </div>
+
+                <div className="absolute bottom-6 left-6 right-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    className="px-4 py-2 rounded-xl glass-morphism border border-cyan-500/30 inline-block"
+                  >
+                    <p className="text-[10px] font-mono text-cyan-400 uppercase tracking-[0.3em] font-black">
+                      CSE North South University
+                    </p>
+                  </motion.div>
+                </div>
+              </div>
+
               <div className="flex items-center gap-4 mb-8">
                 <div className="p-3 bg-cyan-500/20 rounded-2xl text-cyan-400">
                   <Terminal size={32} />
@@ -73,6 +113,15 @@ export default function About() {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
+                  <div className="p-2 bg-cyan-500/20 rounded-lg text-cyan-400 mt-1">
+                    <Cpu size={20} />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-1">Machine Learning & AI</h4>
+                    <p className="text-slate-500 text-sm">Developing intelligent systems and predictive models.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
                   <div className="p-2 bg-purple-500/20 rounded-lg text-purple-400 mt-1">
                     <Code size={20} />
                   </div>
@@ -87,7 +136,7 @@ export default function About() {
                   </div>
                   <div>
                     <h4 className="text-white font-bold mb-1">Content Strategy</h4>
-                    <p className="text-slate-500 text-sm">Creating educational tech content for a growing community.</p>
+                    <p className="text-slate-500 text-sm">Producing daily life vlogs, funny videos, and travelling content alongside educational tech tutorials.</p>
                   </div>
                 </div>
               </div>

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { PROJECTS } from '../constants';
+import { PROJECTS, PERSONAL_INFO } from '../constants';
 import { ExternalLink, Github, Terminal, Cpu, Code2, Globe, Rocket } from 'lucide-react';
 import React from 'react';
 
@@ -18,6 +18,16 @@ export default function Projects() {
       className="py-32 relative overflow-hidden mesh-bg code-lighting scanline-effect"
       onMouseMove={handleMouseMove}
     >
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <img 
+          src={PERSONAL_INFO.aboutImage} 
+          alt="" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
           <div className="max-w-2xl">

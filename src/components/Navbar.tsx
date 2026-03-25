@@ -34,10 +34,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <motion.a 
           href="#"
-          className="text-3xl font-black tracking-tighter text-white group"
+          className="text-3xl font-black tracking-tighter text-white group flex items-center gap-3"
           whileHover={{ scale: 1.05 }}
         >
-          Hridoy<span className="text-cyan-400 group-hover:animate-pulse">.</span>
+          <div className="w-10 h-10 rounded-full overflow-hidden border border-cyan-500/30 group-hover:border-cyan-400 transition-colors">
+            <img 
+              src={PERSONAL_INFO.aboutImage} 
+              alt="CSE NSU" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <span>Hridoy<span className="text-cyan-400 group-hover:animate-pulse">.</span></span>
         </motion.a>
 
         {/* Desktop Menu */}
