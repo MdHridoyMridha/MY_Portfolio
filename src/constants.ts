@@ -68,11 +68,20 @@ export const PROJECTS = [
     link: "#"
   },
   {
-    title: "C++ Management System",
-    description: "A robust console-based management system focusing on OOP principles.",
-    tech: ["C++", "File Handling"],
-    image: "https://picsum.photos/seed/cpp/800/600",
-    link: "#"
+    title: "Tic-Tac-Toe Game",
+    description: "A classic interactive Tic-Tac-Toe game with a clean UI and smooth gameplay.",
+    tech: ["JavaScript", "HTML", "CSS"],
+    image: "https://picsum.photos/seed/tictactoe/800/600",
+    link: "#",
+    github: "https://github.com/MdHridoyMridha/Tic-Tac-Toe-game.git"
+  },
+  {
+    title: "Sharido",
+    description: "A comprehensive e-commerce web application featuring product management and secure transactions.",
+    tech: ["PHP", "SQL", "JavaScript"],
+    image: "https://drive.google.com/thumbnail?id=1-yMjZS35AurmnhLaL38OwHe9E8z7olkv&sz=w1000",
+    link: "#",
+    github: "https://github.com/MdHridoyMridha/sharido.git"
   }
 ];
 
